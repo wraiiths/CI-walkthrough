@@ -8,4 +8,7 @@ class CapacityTests(unittest.TestCase):
 
     def test_full(self):
         self.assertEqual(remaining_seats(10, 10), 0)
+
+    def test_overbooked(self):
+	    self.assertEqual(remaining_seats(10, 12), -2)
  
