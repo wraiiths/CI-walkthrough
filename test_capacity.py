@@ -9,3 +9,17 @@ class CapacityTests(unittest.TestCase):
     def test_full(self):
         self.assertEqual(remaining_seats(10, 10), 0)
  
+
+
+class CapacityTests(unittest.TestCase):
+    def test_partly_booked(self):
+        self.assertEqual(remaining_seats(10, 3), 7)
+
+    def test_full(self):
+        self.assertEqual(remaining_seats(10, 10), 0)
+
+    def test_overbooked(self):
+        self.assertEqual(remaining_seats(10, 12), -2)
+
+    def test_empty_event(self):
+        self.assertEqual(remaining_seats(25, 0), 25)
